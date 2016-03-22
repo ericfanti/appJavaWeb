@@ -34,6 +34,11 @@ public class ServletController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		String opcao = request.getParameter("opcao");
+		RequestDispatcher dispatcher;
+		
+		if(opcao.equals("logar")){
+		
 		String login = request.getParameter("login");
 		String senha = request.getParameter("senha");
 		
@@ -43,7 +48,6 @@ public class ServletController extends HttpServlet {
 		u.setSenha(senha);
 		
 		UsuarioDao uD = new UsuarioDao();
-		RequestDispatcher dispatcher;
 		
 		try{
 			
@@ -51,13 +55,15 @@ public class ServletController extends HttpServlet {
 			
 			if(retorno){
 				
-				String pagina = "/principal.jsp";
+				String pagina = "/WEB-INF/jsp/principal.jsp";
+				request.setAttribute("usuario", u);
 				dispatcher = getServletContext().getRequestDispatcher(pagina);
 				dispatcher.forward(request, response);
 			}
 			
 			else{
 				String pagina = "/index.jsp";
+				request.setAttribute("msg", "Erro ao Logar");
 				dispatcher = getServletContext().getRequestDispatcher(pagina);
 				dispatcher.forward(request, response);
 				
@@ -68,7 +74,7 @@ public class ServletController extends HttpServlet {
 		{
 			e.printStackTrace();
 		}
-		
+	}	
 		
 		
 		

@@ -8,7 +8,15 @@
 </head>
 <body>
 
-<h1> Logado! </h1>
+	<form action="ServletController" method="post">
+		<label for ="login">Login:</label>
+		<input type="text" id="login" name="login"/>
+		<label for ="senha">Senha:</label>
+		<input type="password" id="senha" name="senha"/>
+		<button type="submit" name= "cadastrarUsuario">Cadastrar</button>
+		
+	</form>
+	
 
 </body>
 </html>
