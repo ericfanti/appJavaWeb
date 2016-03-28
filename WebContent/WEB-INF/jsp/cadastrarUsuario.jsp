@@ -13,7 +13,7 @@
 		<input type="text" id="login" name="login"/>
 		<label for ="senha">Senha:</label>
 		<input type="password" id="senha" name="senha"/>
-		<button type="submit" name= "cadastrarUsuario">Cadastrar</button>
+		<button type="submit" name= "cadastrar">Cadastrar</button>
 		
 	</form>
 	

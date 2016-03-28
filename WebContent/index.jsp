@@ -12,7 +12,7 @@
 </head>
 <body>
 
-	<form action="ServletController" method="post">
+	<form action="mvc?logica=LogarLogica" method="post">
 		<label for ="login">Login:</label>
 		<input type="text" id="login" name="login"/>
 		<label for ="senha">Senha:</label>

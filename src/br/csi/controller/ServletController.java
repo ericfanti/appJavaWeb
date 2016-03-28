@@ -37,7 +37,16 @@ public class ServletController extends HttpServlet {
 		String opcao = request.getParameter("opcao");
 		RequestDispatcher dispatcher;
 		
-		if(opcao.equals("logar")){
+		
+		if(opcao.equals("cadastraUsuario"))
+		{
+			String pagina = "/WEB-INF/jsp/cadastrarUsuario.jsp";
+			dispatcher = getServletContext().getRequestDispatcher(pagina);
+			dispatcher.forward(request, response);
+			
+		}
+		
+		else if(opcao.equals("logar")){
 		
 		String login = request.getParameter("login");
 		String senha = request.getParameter("senha");
